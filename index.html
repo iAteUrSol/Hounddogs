@@ -162,7 +162,7 @@
             background-size: cover;
             color: white;
             text-align: center;
-            padding: 220px 20px;
+            padding: 100px 20px;
             position: relative;
             overflow: hidden;
             width: 100%;
@@ -280,12 +280,60 @@
         }
         
         .hotel-content {
-            display: flex;
-            align-items: flex-start;
-            gap: 40px;
-            position: relative;
-            z-index: 1;
-        }
+    position: relative;
+    z-index: 1;
+    max-width: 100%;
+}
+
+/* New classes for the restructured hotel content section */
+.welcome-orange-text {
+    margin-bottom: 40px;
+}
+
+.welcome-orange-text p {
+    color: #ff8a4c;
+    font-weight: bold;
+    font-size: 1.35rem;
+    text-align: justify;
+    line-height: 1.7;
+    margin-bottom: 0;
+}
+
+
+.hotel-image-container img {
+    width: 100%;
+    height: auto;
+    display: block;
+    object-fit: cover;
+    transition: transform 0.5s;
+}
+
+.hotel-image-container:hover img {
+    transform: scale(1.05);
+}
+
+/* Desktop layout - side by side columns */
+@media (min-width: 992px) {
+    .hotel-content {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 40px;
+    }
+    
+    .welcome-orange-text {
+        flex: 100%;
+        margin-bottom: 30px;
+    }
+    
+    .hotel-image-container {
+        flex: 1;
+        margin-right: 40px;
+    }
+    
+    .hotel-text {
+        flex: 1;
+    }
+}
         
         .hotel-image {
             flex: 1;
@@ -1590,38 +1638,35 @@
         </div>
     </section>
 
-    <!-- Welcome to Hound Dogs Section - UPDATED LAYOUT -->
-    <section id="hotel" class="hotel">
-        <div class="container">
-            <h2 class="section-heading">Welcome to Hound Dogs</h2>
+    <!-- Welcome to Hound Dogs Section - MOBILE-FRIENDLY LAYOUT -->
+<section id="hotel" class="hotel">
+    <div class="container">
+        <h2 class="section-heading">Welcome to Hound Dogs</h2>
+        
+        <div class="hotel-content">
+            <!-- Orange text - will appear first on all devices -->
+            <div class="welcome-orange-text">
+                <p>Welcome to our home from home boarding and day care. We provide a warm and nurturing environment where your furry friends can feel safe and loved while you're away. We ensure that every dog receives personalised care, plenty of playtime, and lots of cuddles. Trust us to treat your pets like family.</p>
+            </div>
             
-            <div class="hotel-content" style="display: flex; flex-direction: row; align-items: flex-start; gap: 40px;">
-                <!-- Left column: Orange text and Image -->
-                <div style="flex: 1;">
-                    <!-- Orange text with proper justification -->
-                    <p style="color: #ff8a4c; font-weight: bold; font-size: 1.35rem; margin-bottom: 30px; text-align: justify;">
-                        Welcome to our home from home boarding and day care. We provide a warm and nurturing environment where your furry friends can feel safe and loved while you're away. We ensure that every dog receives personalised care, plenty of playtime, and lots of cuddles. Trust us to treat your pets like family.
-                    </p>
-                    
-                    <!-- Image below orange text -->
-                    <div class="hotel-image" style="max-width: 100%;">
-                        <img src="image/gandlu.jpg" alt="Our cozy dog boarding facility" style="width: 100%;">
-                    </div>
-                </div>
+            <!-- Image - will appear second on all devices -->
+            <div class="hotel-image-container">
+                <img src="image/gandlu.jpg" alt="Our cozy dog boarding facility">
+            </div>
+            
+            <!-- Black text - will appear third on all devices -->
+            <div class="hotel-text">
+                <p>My name is Georgie, and along with my dog Luna, we provide a loving, comfortable, and safe environment for your dogs when you're away. Our home is your dog's home—a place where they can relax, play, and receive the individual attention they deserve.</p>
                 
-                <!-- Right column: Black text starting from top -->
-                <div class="hotel-text" style="flex: 1;">
-                    <p>My name is Georgie, and along with my dog Luna, we provide a loving, comfortable, and safe environment for your dogs when you're away. Our home is your dog's home—a place where they can relax, play, and receive the individual attention they deserve.</p>
-                    
-                    <p>Unlike large boarding facilities, we take a limited number of dogs at a time to ensure each pet receives personal care tailored to their unique needs and personality. We believe that maintaining your dog's regular routine is essential for their happiness and well-being.</p>
-                    
-                    <p>Our home features a secure garden where your furry friends can play and explore safely. Inside, they'll enjoy cosy sleeping areas and plenty of toys to keep them entertained.</p>
-                    
-                    <p>We're fully insured and have years of experience caring for dogs of all breeds, ages, and temperaments. Your peace of mind is as important to us as your dog's happiness.</p>
-                </div>
+                <p>Unlike large boarding facilities, we take a limited number of dogs at a time to ensure each pet receives personal care tailored to their unique needs and personality. We believe that maintaining your dog's regular routine is essential for their happiness and well-being.</p>
+                
+                <p>Our home features a secure garden where your furry friends can play and explore safely. Inside, they'll enjoy cosy sleeping areas and plenty of toys to keep them entertained.</p>
+                
+                <p>We're fully insured and have years of experience caring for dogs of all breeds, ages, and temperaments. Your peace of mind is as important to us as your dog's happiness.</p>
             </div>
         </div>
-    </section>
+    </div>
+</section>
 
     <!-- Gallery Section with Enhanced Carousel -->
     <section id="gallery" class="gallery-section">
